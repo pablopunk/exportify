@@ -17,7 +17,7 @@ const Songs: FunctionComponent<Props> = () => {
           setSongs(results)
         })
         .catch(() => {
-          // window.location.href = '/' // try to login again to refresh token
+          window.location.href = '/' // try to login again to refresh token
         })
     }
   }, [code])
@@ -28,22 +28,19 @@ const Songs: FunctionComponent<Props> = () => {
     }
   }, [query])
 
-  if (!code) {
-    return <div>Not found</div>
-  }
-
   return (
     <div>
-      {songs.length === 0 && (
-        <div className="flex flex-col items-center justify-center w-full">
-          <div className="my-5">Hang on! This might take a while...</div>
-          <FoldingCube
-            size={100}
-            color="var(--color-accent)"
-            className="mt-5"
-          />
-        </div>
-      )}
+      {!code ||
+        (songs.length === 0 && (
+          <div className="flex flex-col items-center justify-center w-full">
+            <div className="my-5">Hang on! This might take a while...</div>
+            <FoldingCube
+              size={100}
+              color="var(--color-accent)"
+              className="mt-5"
+            />
+          </div>
+        ))}
       <ul>
         {songs.map((song) => (
           <li key={song.id} className="flex items-center">
