@@ -107,7 +107,13 @@ const Songs: FunctionComponent<Props> = () => {
         ))}
       </ul>
       {(songs.length === 0 || songs.length < total) && (
-        <FoldingCube size={100} color="var(--color-accent)" className="mt-5" />
+        <div className="flex justify-center">
+          <FoldingCube
+            size={100}
+            color="var(--color-accent)"
+            className="mt-5"
+          />
+        </div>
       )}
     </div>
   )
