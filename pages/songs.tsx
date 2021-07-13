@@ -83,9 +83,11 @@ const Songs: FunctionComponent<Props> = () => {
           completed={progress}
           height="40px"
           bgColor="var(--color-accent)"
-          baseBgColor="var(--color-bgDim)"
+          baseBgColor="var(--color-bg)"
           labelAlignment="outside"
           labelColor="var(--color-fg)"
+          className="pr-2 shadow-md rounded-2xl"
+          borderRadius="16px"
         />
       )}
       <ul className="mt-8">
@@ -93,13 +95,13 @@ const Songs: FunctionComponent<Props> = () => {
           <a
             key={song.id}
             href={`https://youtube.com/watch?v=${song.youtubeVideoId}`}
-            className="hover:font-bold"
+            className="block p-2 my-2 transition-colors border rounded-md shadow-md group hover:bg-accent bg-bgDim"
           >
             <li className="flex flex-wrap items-center">
-              <div className="mr-2 text-sm">
+              <div className="mr-2 text-sm group-hover:text-bg">
                 {song.artists?.map((a) => a.name).join(', ')}
               </div>
-              <div className="text-lg font-semibold text-accent">
+              <div className="text-lg font-semibold text-accent group-hover:text-bg">
                 {song.name}
               </div>
             </li>
