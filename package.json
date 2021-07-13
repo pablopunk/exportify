@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^5.0.0-beta.0",
+    "@ramonak/react-progress-bar": "^3.1.0",
     "autoprefixer": "^10.2.6",
     "better-react-spinkit": "^2.0.4",
     "bootstrap": "^4.6.0",

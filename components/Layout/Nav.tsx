@@ -11,7 +11,7 @@ type Props = {}
 const Page: FunctionComponent<Props> = () => {
   const [theme, toggleTheme] = useTheme()
   const linkStyles =
-    'px-2 py-1 ml-2 border rounded-md bg-bg focus:outline-none shadow-sm hover:shadow-md transition-all hover:text-accent'
+    'px-2 py-1 ml-2 text-bg rounded-md focus:outline-none transition-all hover:text-bgDim'
 
   return (
     <nav>

@@ -1,9 +1,10 @@
 body {
   --color-bg: white;
-  --color-bgDim: rgba(0, 0, 0, 0.07);
+  --color-bgDim: #ededed;
   --color-fg: #454545;
   --color-accent: #1db954;
   --color-accent2: #0284c7;
+  --color-danger: #a70000;
   --color-border: lightgray;
 
   --header-height: 60px;
@@ -23,6 +24,7 @@ body.dark {
   --color-fg: #d1d1d1;
   --color-accent: #17b794;
   --color-accent2: cyan;
+  --color-danger: #ff6262;
   --color-border: #343456;
 }
 
