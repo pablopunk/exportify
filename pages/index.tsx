@@ -3,9 +3,13 @@ import { FunctionComponent } from 'react'
 type Props = {}
 
 const Index: FunctionComponent<Props> = () => (
-  <div>
-    <h1 className="text-3xl">Index page</h1>
-    <p>Go ahead and edit the code</p>
+  <div className="flex items-center justify-center mt-[20vh]">
+    <a
+      href="/api/spotify"
+      className="p-2 text-xl transition-colors border rounded-md shadow-md bg-accent text-bg hover:bg-bg hover:text-accent"
+    >
+      Sign in with Spotify
+    </a>
   </div>
 )
 

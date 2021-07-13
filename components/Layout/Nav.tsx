@@ -3,8 +3,6 @@ import Link from 'next/link'
 import useTheme from 'hooks/useTheme'
 
 const LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
   { label: 'Github', href: 'https://github.com/pablopunk/next-starter' },
 ]
 
