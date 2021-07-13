@@ -16,7 +16,8 @@ export default async function (req, res) {
 
     const apiLimit = 20
     const results = await api.getMySavedTracks({ limit: apiLimit })
-    const total = results.body['total']
+    // const total = results.body['total']
+    const total = 20
     let songs = results.body.items.map((item) => item.track)
 
     let songPromises = []
