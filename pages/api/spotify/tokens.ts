@@ -19,6 +19,7 @@ export default async function (req, res) {
       expiresIn,
     })
   } catch (err) {
+    console.log(err.message)
     return res.status(500).send({ error: err.message })
   }
 }
