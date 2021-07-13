@@ -1,9 +1,7 @@
 import { SITE_URL } from 'config'
 import Spotify from 'spotify-web-api-node'
 
-const redirectUri =
-  (process.env.NODE_ENV === 'production' ? SITE_URL : 'http://localhost:3000') +
-  '/songs'
+const redirectUri = SITE_URL + '/songs'
 const clientSecret = process.env.SPOTIFY_SECRET
 const clientId = process.env.SPOTIFY_CLIENT_ID
 

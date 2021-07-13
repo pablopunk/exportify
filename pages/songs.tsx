@@ -32,7 +32,7 @@ const Songs: FunctionComponent<Props> = () => {
     <div>
       {!code ||
         (songs.length === 0 && (
-          <div className="flex flex-col items-center justify-center w-full">
+          <div className="flex flex-col items-center justify-center w-full overflow-ellipsis">
             <div className="my-5">Hang on! This might take a while...</div>
             <FoldingCube
               size={100}
@@ -43,7 +43,7 @@ const Songs: FunctionComponent<Props> = () => {
         ))}
       <ul>
         {songs.map((song) => (
-          <li key={song.id} className="flex items-center">
+          <li key={song.id} className="flex flex-wrap items-center">
             <div className="mr-2 text-sm">
               {song.artists.map((a) => a.name).join(', ')}
             </div>
