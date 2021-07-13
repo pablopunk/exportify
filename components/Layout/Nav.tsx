@@ -3,7 +3,7 @@ import Link from 'next/link'
 import useTheme from 'hooks/useTheme'
 
 const LINKS = [
-  { label: 'Github', href: 'https://github.com/pablopunk/next-starter' },
+  { label: 'Github', href: 'https://github.com/pablopunk/exportify' },
 ]
 
 type Props = {}
