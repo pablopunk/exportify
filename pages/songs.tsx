@@ -90,15 +90,23 @@ const Songs: FunctionComponent<Props> = () => {
       )}
       <ul className="mt-8">
         {songs.map((song) => (
-          <li key={song.id} className="flex flex-wrap items-center">
-            <div className="mr-2 text-sm">
-              {song.artists?.map((a) => a.name).join(', ')}
-            </div>
-            <div className="text-lg font-semibold text-accent">{song.name}</div>
-          </li>
+          <a
+            key={song.id}
+            href={`https://youtube.com/watch?v=${song.youtubeVideoId}`}
+            className="hover:font-bold"
+          >
+            <li className="flex flex-wrap items-center">
+              <div className="mr-2 text-sm">
+                {song.artists?.map((a) => a.name).join(', ')}
+              </div>
+              <div className="text-lg font-semibold text-accent">
+                {song.name}
+              </div>
+            </li>
+          </a>
         ))}
       </ul>
-      {total > songs.length && (
+      {(songs.length === 0 || songs.length < total) && (
         <FoldingCube size={100} color="var(--color-accent)" className="mt-5" />
       )}
     </div>
