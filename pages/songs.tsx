@@ -2,12 +2,12 @@ import { FunctionComponent, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { FoldingCube } from 'better-react-spinkit'
 import ProgressBar from '@ramonak/react-progress-bar'
+import { GetServerSidePropsContext } from 'next'
 
 type Props = {}
 
-const Songs: FunctionComponent<Props> = () => {
+const Songs: FunctionComponent<Props> = ({ code }) => {
   const { query, push } = useRouter()
-  const [code, setCode] = useState(null)
   const [songs, setSongs] = useState([])
   const [page, setPage] = useState(0)
   const [total, setTotal] = useState(0)
@@ -44,12 +44,6 @@ const Songs: FunctionComponent<Props> = () => {
         })
     }
   }, [tokens, page])
-
-  useEffect(() => {
-    if (query.code) {
-      setCode(query.code)
-    }
-  }, [query])
 
   useEffect(() => {
     if (code) {
@@ -119,6 +113,20 @@ const Songs: FunctionComponent<Props> = () => {
       )}
     </div>
   )
+}
+
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  const { code } = ctx.query
+
+  if (!code) {
+    ctx.res.writeHead(302, {
+      Location: '/',
+    })
+
+    return ctx.res.end()
+  }
+
+  return { props: { code } }
 }
 
 export default Songs
