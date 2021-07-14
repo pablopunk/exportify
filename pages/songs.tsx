@@ -4,10 +4,10 @@ import { FoldingCube } from 'better-react-spinkit'
 import ProgressBar from '@ramonak/react-progress-bar'
 import { GetServerSidePropsContext } from 'next'
 
-type Props = {}
+type Props = { code: string }
 
 const Songs: FunctionComponent<Props> = ({ code }) => {
-  const { query, push } = useRouter()
+  const { push } = useRouter()
   const [songs, setSongs] = useState([])
   const [page, setPage] = useState(0)
   const [total, setTotal] = useState(0)
